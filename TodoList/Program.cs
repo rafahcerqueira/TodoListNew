@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ToDoList;
+using System;
 using System.Windows.Forms;
-using ToDoList.Forms;
 
 namespace TodoList
 {
@@ -14,7 +14,7 @@ namespace TodoList
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+			Application.Run(new Form1());
 		}
 	}
 }
