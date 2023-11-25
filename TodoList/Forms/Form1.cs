@@ -30,7 +30,7 @@ namespace ToDoList
             {
                 string[] files = Directory.GetFiles(path, "*.csv");
                 // Order the files by date
-                files = files.OrderBy(f => DateTime.ParseExact(Path.GetFileNameWithoutExtension(f), "dd.MM.yyyy", CultureInfo.InvariantCulture)).ToArray();
+                // files = files.OrderBy(f => DateTime.ParseExact(Path.GetFileNameWithoutExtension(f), "dd.MM.yyyy", CultureInfo.InvariantCulture)).ToArray();
 
                 foreach (string file in files)
                 {
@@ -64,8 +64,6 @@ namespace ToDoList
                     groupBox_TodoOld.MinimumSize = new Size(1, Math.Max((int)Math.Round(23.333f * 6), (int)Math.Round(23.333f * checkedListBox_TodoOld.Items.Count)));
                     groupBox_TodoOld.Controls.Add(checkedListBox_TodoOld);
 
-                    // Add todo (if not from current date)
-                    if (!isTodaysTask) tabPage_TodoOld.Controls.Add(groupBox_TodoOld);
                 }
             }
         }
@@ -223,6 +221,11 @@ namespace ToDoList
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox_Action_Enter_1(object sender, EventArgs e)
         {
 
         }

@@ -1,4 +1,4 @@
-﻿using ToDoList;
+﻿using Login_System;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +14,7 @@ namespace TodoList
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			Application.Run(new LoginForm());
 		}
 	}
 }
