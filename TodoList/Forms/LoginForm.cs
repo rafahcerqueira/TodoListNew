@@ -22,20 +22,13 @@ namespace Login_System
         // NpgsqlConnection conn = new NpgsqlConnection(ConfigurationManager.AppSettings.Get("MyConnection"));
         // NpgsqlCommand cmd = new NpgsqlCommand();
         // NpgsqlDataAdapter da = new NpgsqlDataAdapter();
-        private void label6_Click(object sender, EventArgs e)
+        private void inputRedirect_Click(object sender, EventArgs e)
         {
             // new RegisterForm().Show();
             this.Hide();
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
-        {
-            txtUsername.Text = "";
-            txtPassword.Text = "";
-            txtUsername.Focus();
-        }
-
-        private void registrationButton_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
 /*            if (conn != null && conn.State == ConnectionState.Open)
             {
@@ -65,19 +58,6 @@ namespace Login_System
                     conn.Open();
                 }
             }*/
-        }
-
-        private void checkboxShowPass_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkboxShowPass.Checked)
-            {
-                txtPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                txtPassword.PasswordChar = '*';
-
-            }
         }
     }
 }
