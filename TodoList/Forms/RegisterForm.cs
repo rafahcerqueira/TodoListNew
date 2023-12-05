@@ -59,5 +59,10 @@ namespace Register_System
                 }
             }*/
         }
+
+        private void labelRedirect_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
