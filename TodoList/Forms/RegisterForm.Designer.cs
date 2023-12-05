@@ -1,9 +1,9 @@
 ﻿using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace Login_System
+namespace Register_System
 {
-    partial class LoginForm
+    partial class RegisterForm
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -25,112 +25,139 @@ namespace Login_System
             this.inputEmail = new System.Windows.Forms.TextBox();
             this.labelSenha = new System.Windows.Forms.Label();
             this.inputSenha = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.labelConfirmSenha = new System.Windows.Forms.Label();
+            this.inputConfirmSenha = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.labelRedirect = new System.Windows.Forms.Label();
             this.inputRedirect = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
+             
             // title
-            // 
+            
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("MS UI Gothic", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.MediumPurple;
-            this.title.Location = new System.Drawing.Point(188, 42);
+            this.title.Location = new System.Drawing.Point(171, 42);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(112, 33);
+            this.title.Size = new System.Drawing.Size(172, 33);
             this.title.TabIndex = 6;
-            this.title.Text = "LOGIN";
-            // 
+            this.title.Text = "REGISTER";
+             
             // labelEmail
-            // 
+             
             this.labelEmail.AutoSize = true;
             this.labelEmail.ForeColor = System.Drawing.Color.White;
-            this.labelEmail.Location = new System.Drawing.Point(92, 142);
+            this.labelEmail.Location = new System.Drawing.Point(90, 107);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(42, 17);
             this.labelEmail.TabIndex = 9;
             this.labelEmail.Text = "Email";
-            // 
+             
             // inputEmail
-            // 
+             
             this.inputEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputEmail.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputEmail.ForeColor = System.Drawing.Color.White;
-            this.inputEmail.Location = new System.Drawing.Point(95, 172);
+            this.inputEmail.Location = new System.Drawing.Point(93, 137);
             this.inputEmail.Multiline = true;
             this.inputEmail.Name = "inputEmail";
             this.inputEmail.Size = new System.Drawing.Size(300, 40);
             this.inputEmail.TabIndex = 0;
-            // 
+            
             // labelSenha
-            // 
+             
             this.labelSenha.AutoSize = true;
             this.labelSenha.ForeColor = System.Drawing.Color.White;
-            this.labelSenha.Location = new System.Drawing.Point(92, 228);
+            this.labelSenha.Location = new System.Drawing.Point(90, 193);
             this.labelSenha.Name = "labelSenha";
             this.labelSenha.Size = new System.Drawing.Size(45, 17);
             this.labelSenha.TabIndex = 8;
             this.labelSenha.Text = "Senha";
-            // 
+             
             // inputSenha
-            // 
+             
             this.inputSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inputSenha.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputSenha.ForeColor = System.Drawing.Color.White;
-            this.inputSenha.Location = new System.Drawing.Point(95, 257);
+            this.inputSenha.Location = new System.Drawing.Point(93, 222);
             this.inputSenha.Multiline = true;
             this.inputSenha.Name = "inputSenha";
             this.inputSenha.PasswordChar = '*';
             this.inputSenha.Size = new System.Drawing.Size(300, 40);
             this.inputSenha.TabIndex = 1;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(95, 338);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(300, 40);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Entrar";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
+
+            // labelConfirmSenha
+
+            this.labelConfirmSenha.AutoSize = true;
+            this.labelConfirmSenha.ForeColor = System.Drawing.Color.White;
+            this.labelConfirmSenha.Location = new System.Drawing.Point(90, 278);
+            this.labelConfirmSenha.Name = "labelConfirmSenha";
+            this.labelConfirmSenha.Size = new System.Drawing.Size(45, 17);
+            this.labelConfirmSenha.TabIndex = 22;
+            this.labelConfirmSenha.Text = "Confirmar Senha";
+
+            // inputConfirmSenha
+
+            this.inputConfirmSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.inputConfirmSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputConfirmSenha.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputConfirmSenha.ForeColor = System.Drawing.Color.White;
+            this.inputConfirmSenha.Location = new System.Drawing.Point(93, 307);
+            this.inputConfirmSenha.Multiline = true;
+            this.inputConfirmSenha.Name = "inputConfirmSenha";
+            this.inputConfirmSenha.PasswordChar = '*';
+            this.inputConfirmSenha.Size = new System.Drawing.Size(300, 40);
+            this.inputConfirmSenha.TabIndex = 21;
+
+            // btnRegister
+
+            this.btnRegister.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegister.FlatAppearance.BorderSize = 0;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Location = new System.Drawing.Point(93, 378);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(300, 40);
+            this.btnRegister.TabIndex = 3;
+            this.btnRegister.Text = "Entrar";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            
             // labelRedirect
-            // 
+            
             this.labelRedirect.AutoSize = true;
-            this.labelRedirect.Location = new System.Drawing.Point(155, 398);
+            this.labelRedirect.Location = new System.Drawing.Point(151, 441);
             this.labelRedirect.Name = "labelRedirect";
             this.labelRedirect.Size = new System.Drawing.Size(105, 17);
             this.labelRedirect.TabIndex = 20;
             this.labelRedirect.Text = "Não tem conta?";
-            // 
+             
             // inputRedirect
-            // 
+             
             this.inputRedirect.AutoSize = true;
             this.inputRedirect.Cursor = System.Windows.Forms.Cursors.Hand;
             this.inputRedirect.ForeColor = System.Drawing.Color.MediumPurple;
-            this.inputRedirect.Location = new System.Drawing.Point(259, 398);
+            this.inputRedirect.Location = new System.Drawing.Point(255, 441);
             this.inputRedirect.Name = "inputRedirect";
             this.inputRedirect.Size = new System.Drawing.Size(75, 17);
             this.inputRedirect.TabIndex = 19;
             this.inputRedirect.Text = "Criar conta";
             this.inputRedirect.Click += new System.EventHandler(this.inputRedirect_Click);
-            // 
-            // LoginForm
-            // 
+             
+            // RegisterForm
+             
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(500, 500);
+            this.Controls.Add(this.inputConfirmSenha);
+            this.Controls.Add(this.labelConfirmSenha);
             this.Controls.Add(this.inputRedirect);
             this.Controls.Add(this.labelRedirect);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.inputSenha);
             this.Controls.Add(this.labelSenha);
             this.Controls.Add(this.inputEmail);
@@ -140,12 +167,11 @@ namespace Login_System
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "LoginForm";
+            this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "RegisterForm";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -155,7 +181,9 @@ namespace Login_System
         private System.Windows.Forms.TextBox inputEmail;
         private System.Windows.Forms.Label labelSenha;
         private System.Windows.Forms.TextBox inputSenha;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label labelConfirmSenha;
+        private System.Windows.Forms.TextBox inputConfirmSenha;
+        private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label labelRedirect;
         private System.Windows.Forms.Label inputRedirect;
     }
