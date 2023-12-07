@@ -1,63 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Register_System;
+using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Configuration;
-// using Npgsql;
-// using Register_System;
+using ToDoList;
 
 namespace Login_System
 {
     public partial class LoginForm : Form
     {
+        private const string ConnectionString = "Server=localhost;Database=master;Trusted_Connection=True;";
+
         public LoginForm()
         {
             InitializeComponent();
         }
-        // NpgsqlConnection conn = new NpgsqlConnection(ConfigurationManager.AppSettings.Get("MyConnection"));
-        // NpgsqlCommand cmd = new NpgsqlCommand();
-        // NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+
         private void inputRedirect_Click(object sender, EventArgs e)
         {
-            // new RegisterForm().Show();
+            new RegisterForm().Show();
             this.Hide();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-/*            if (conn != null && conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-            conn.Open();
-            string login = ("SELECT * FROM csharp_user WHERE username =  '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "' ");
-            cmd = new NpgsqlCommand(login, conn);
-            NpgsqlDataReader dr = cmd.ExecuteReader();*/
+            string email = inputEmail.Text;
+            string senha = inputSenha.Text;
 
-
-/*            if (dr.Read() == true)
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
             {
-                conn.Close();
-                new Dashboard().Show();
-                Dashboard.instance.lbl.Text = txtUsername.Text;
-                this.Hide();
+                MessageBox.Show("Por favor, preencha todos os campos.");
+                return;
             }
-            else
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                MessageBox.Show("Invalid Credentials, please try Again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsername.Text = "";
-                txtPassword.Text = "";
-                txtUsername.Focus();
-                if (conn != null && conn.State == ConnectionState.Closed)
+                try
                 {
-                    conn.Open();
+                    connection.Open();
+
+                    string query = "SELECT COUNT(*) FROM Usuarios WHERE Email = @Email AND Senha = @Senha";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@Senha", senha);
+
+                        int count = (int)command.ExecuteScalar();
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Login bem-sucedido!");
+                            new Form1().Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Credenciais inválidas. Verifique seu e-mail e senha.");
+                        }
+                    }
                 }
-            }*/
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao realizar login: " + ex.Message);
+                }
+            }
         }
     }
 }

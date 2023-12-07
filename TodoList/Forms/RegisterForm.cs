@@ -1,68 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Login_System;
+using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Configuration;
-// using Npgsql;
-// using Register_System;
+using TodoList.Utils;
 
 namespace Register_System
 {
     public partial class RegisterForm : Form
     {
+        private const string ConnectionString = "Server=localhost;Database=master;Trusted_Connection=True;";
+
         public RegisterForm()
         {
             InitializeComponent();
         }
-        // NpgsqlConnection conn = new NpgsqlConnection(ConfigurationManager.AppSettings.Get("MyConnection"));
-        // NpgsqlCommand cmd = new NpgsqlCommand();
-        // NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+
         private void inputRedirect_Click(object sender, EventArgs e)
         {
-            // new RegisterForm().Show();
+            new LoginForm().Show();
             this.Hide();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-/*            if (conn != null && conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-            conn.Open();
-            string regiter = ("SELECT * FROM csharp_user WHERE username =  '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "' ");
-            cmd = new NpgsqlCommand(register, conn);
-            NpgsqlDataReader dr = cmd.ExecuteReader();*/
+            string email = inputEmail.Text;
+            string senha = inputSenha.Text;
 
-
-/*            if (dr.Read() == true)
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
             {
-                conn.Close();
-                new Dashboard().Show();
-                Dashboard.instance.lbl.Text = txtUsername.Text;
-                this.Hide();
+                MessageBox.Show("Por favor, preencha todos os campos.");
+                return;
             }
-            else
+
+            string novoUuid = UuidGenerator.GenerateUuid();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                MessageBox.Show("Invalid Credentials, please try Again.", "Register Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsername.Text = "";
-                txtPassword.Text = "";
-                txtUsername.Focus();
-                if (conn != null && conn.State == ConnectionState.Closed)
+                try
                 {
-                    conn.Open();
+                    connection.Open();
+
+                    string query = "INSERT INTO Usuarios (ID, Email, Senha) VALUES (@ID, @Email, @Senha)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ID", novoUuid);
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@Senha", senha);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Registro bem-sucedido!");
                 }
-            }*/
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao registrar: " + ex.Message);
+                }
+            }
         }
+
 
         private void labelRedirect_Click(object sender, EventArgs e)
         {
-
+            new LoginForm().Show();
+            this.Hide();
         }
     }
 }

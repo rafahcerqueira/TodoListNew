@@ -16,7 +16,6 @@ namespace ToDoList
 {
     public partial class Form1 : Form
     {
-        // Variables
         bool hasUnsavedModifications = false;
 
         public Form1()
@@ -24,17 +23,13 @@ namespace ToDoList
             InitializeComponent();
             Form1_Resize(null, EventArgs.Empty);
 
-            // Load old tasks
             string path = "tasks";
             if (Directory.Exists(path))
             {
                 string[] files = Directory.GetFiles(path, "*.csv");
-                // Order the files by date
-                // files = files.OrderBy(f => DateTime.ParseExact(Path.GetFileNameWithoutExtension(f), "dd.MM.yyyy", CultureInfo.InvariantCulture)).ToArray();
 
                 foreach (string file in files)
                 {
-                    // Check if it's today's tasks
                     bool isTodaysTask = Path.GetFileNameWithoutExtension(file) == DateTime.Today.ToString("dd.MM.yyyy");
 
                     GroupBox groupBox_TodoOld = new GroupBox();
@@ -60,7 +55,6 @@ namespace ToDoList
                     groupBox_TodoOld.Dock = DockStyle.Top;
                     groupBox_TodoOld.Text = Path.GetFileNameWithoutExtension(file);
 
-                    // Calculate the minimum size based on the number of tasks
                     groupBox_TodoOld.MinimumSize = new Size(1, Math.Max((int)Math.Round(23.333f * 6), (int)Math.Round(23.333f * checkedListBox_TodoOld.Items.Count)));
                     groupBox_TodoOld.Controls.Add(checkedListBox_TodoOld);
 
@@ -68,7 +62,6 @@ namespace ToDoList
             }
         }
 
-        // Shows an input box for the user to enter a text string
         private string ShowInputBox(string title = "Digite seu texto", string defaultText = "")
         {
             using (var form = new Form())
