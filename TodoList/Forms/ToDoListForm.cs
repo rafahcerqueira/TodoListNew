@@ -95,13 +95,9 @@ namespace ToDoList
 
                 // Identificar a coluna pelo nome
                 if (column.Name == "ColumnEditar")
-                {
                     EditarTarefa(e.RowIndex);
-                }
                 else if (column.Name == "ColumnExcluir")
-                {
                     ExcluirTarefa(e.RowIndex);
-                }
             }
         }
 
