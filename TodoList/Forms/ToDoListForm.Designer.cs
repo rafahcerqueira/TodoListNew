@@ -1,30 +1,64 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ToDoList
 {
     public partial class ToDoListForm
     {
-        private ListBox listBox_TodoTasks;
         private Button button_AddTask;
+        private DataGridView dataGridView_TodoTasks;
 
         private void InitializeComponent()
         {
-            this.listBox_TodoTasks = new System.Windows.Forms.ListBox();
             this.button_AddTask = new System.Windows.Forms.Button();
+            this.dataGridView_TodoTasks = new System.Windows.Forms.DataGridView();
             this.SuspendLayout();
 
-            // listBox_TodoTasks
-            this.listBox_TodoTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.listBox_TodoTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox_TodoTasks.ForeColor = System.Drawing.Color.White;
-            this.listBox_TodoTasks.FormattingEnabled = true;
-            this.listBox_TodoTasks.HorizontalScrollbar = true;
-            this.listBox_TodoTasks.Location = new System.Drawing.Point(10, 28);
-            this.listBox_TodoTasks.MinimumSize = new System.Drawing.Size(4, 66);
-            this.listBox_TodoTasks.Name = "listBox_TodoTasks";
-            this.listBox_TodoTasks.Size = new System.Drawing.Size(480, 371);
-            this.listBox_TodoTasks.TabIndex = 0;
+            // dataGridView_TodoTasks
+            this.dataGridView_TodoTasks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dataGridView_TodoTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_TodoTasks.ForeColor = System.Drawing.Color.White;
+            this.dataGridView_TodoTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_TodoTasks.Location = new System.Drawing.Point(10, 28);
+            this.dataGridView_TodoTasks.Name = "dataGridView_TodoTasks";
+            this.dataGridView_TodoTasks.Size = new System.Drawing.Size(480, 371);
+            this.dataGridView_TodoTasks.TabIndex = 1;
+            this.dataGridView_TodoTasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_TodoTasks_CellContentClick);
+
+            // Adicionar coluna de ID 
+            DataGridViewTextBoxColumn idColumn = new DataGridViewTextBoxColumn();
+            idColumn.Name = "ColumnId";
+            idColumn.HeaderText = "ID";
+            idColumn.Visible = false; // Configuração para ocultar a coluna
+            this.dataGridView_TodoTasks.Columns.Add(idColumn);
+
+            // Adicionar coluna de checkbox
+            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            checkBoxColumn.HeaderText = "Concluída";
+            checkBoxColumn.Name = "ColumnConcluida";
+            this.dataGridView_TodoTasks.Columns.Add(checkBoxColumn);
+
+            // Adicionar coluna de descrição
+            DataGridViewTextBoxColumn descriptionColumn = new DataGridViewTextBoxColumn();
+            descriptionColumn.HeaderText = "Descrição";
+            descriptionColumn.Name = "ColumnDescricao";
+            descriptionColumn.ReadOnly = true;
+            this.dataGridView_TodoTasks.Columns.Add(descriptionColumn);
+
+            // Adicionar coluna de botão para editar
+            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+            editButtonColumn.HeaderText = "Editar";
+            editButtonColumn.Name = "ColumnEditar";
+            editButtonColumn.Text = "Editar";
+            editButtonColumn.UseColumnTextForButtonValue = true;
+            this.dataGridView_TodoTasks.Columns.Add(editButtonColumn);
+
+            // Adicionar coluna de botão para excluir
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.HeaderText = "Excluir";
+            deleteButtonColumn.Name = "ColumnExcluir";
+            deleteButtonColumn.Text = "Excluir";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+            this.dataGridView_TodoTasks.Columns.Add(deleteButtonColumn);
 
             // button_AddTask
             this.button_AddTask.Size = new System.Drawing.Size(120, 30);
@@ -40,8 +74,8 @@ namespace ToDoList
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(500, 500);
-            this.Controls.Add(this.listBox_TodoTasks);
             this.Controls.Add(this.button_AddTask);
+            this.Controls.Add(this.dataGridView_TodoTasks);
             this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -49,6 +83,7 @@ namespace ToDoList
             this.Name = "ToDoListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ToDoListForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TodoTasks)).EndInit();
             this.ResumeLayout(false);
         }
     }

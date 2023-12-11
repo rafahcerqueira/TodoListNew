@@ -53,6 +53,18 @@
     <Compile Include="Forms\AdicionarTarefaForm.Designer.cs">
       <DependentUpon>AdicionarTarefaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditarTarefaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditarTarefaForm.Designer.cs">
+      <DependentUpon>EditarTarefaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExcluirTarefaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExcluirTarefaForm.Designer.cs">
+      <DependentUpon>ExcluirTarefaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

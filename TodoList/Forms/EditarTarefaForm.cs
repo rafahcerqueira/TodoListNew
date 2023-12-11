@@ -6,17 +6,17 @@ using TodoList.Utils;
 
 namespace ToDoList.Forms
 {
-    public partial class AdicionarTarefaForm : Form
+    public partial class EditarTarefaForm : Form
     {
-        private string userID;
+        private string idTask;
 
-        public AdicionarTarefaForm(string userID)
+        public EditarTarefaForm(string idTask)
         {
             InitializeComponent();
-            this.userID = userID;
-            this.Text = "Adicionar Tarefa";
-            labelTitulo.Text = "Adicionar Tarefa";
-            btnAdicionar.Text = "Adicionar";
+            this.idTask = idTask;
+            this.Text = "Editar Tarefa";
+            labelTitulo.Text = "Editar Tarefa";
+            btnEditar.Text = "Editar";
             btnCancelar.Text = "Cancelar";
         }
 
@@ -26,7 +26,7 @@ namespace ToDoList.Forms
             this.Close();
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtDescricao.Text))
             {
@@ -34,19 +34,18 @@ namespace ToDoList.Forms
                 return;
             }
 
-            AdicionarTarefaNoBancoDeDados();
+            EditarTarefaNoBancoDeDados();
 
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
-        private void AdicionarTarefaNoBancoDeDados()
+        private void EditarTarefaNoBancoDeDados()
         {
-            string novoUuid = UuidGenerator.GenerateUuid();
             string descricao = txtDescricao.Text;
             DateTime dataSelecionada = datePicker.Value;
 
-            string queryInsertTask = QueryHelper.InsertTask;
+            string queryUpdateTask = QueryHelper.UpdateTask;
 
             using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
             {
@@ -54,21 +53,23 @@ namespace ToDoList.Forms
                 {
                     connection.Open();
 
-                    using (SqlCommand command = new SqlCommand(queryInsertTask, connection))
+                    //"UPDATE Todo SET Description = @Description, Done = @Done Data = @Data WHERE ID = @Id"
+
+                    using (SqlCommand command = new SqlCommand(queryUpdateTask, connection))
                     {
-                        command.Parameters.AddWithValue("@Id", novoUuid);
                         command.Parameters.AddWithValue("@Description", descricao);
+                        command.Parameters.AddWithValue("@Done", 0);
                         command.Parameters.AddWithValue("@Data", dataSelecionada);
-                        command.Parameters.AddWithValue("@UserID", userID);
+                        command.Parameters.AddWithValue("@Id", idTask);
 
                         command.ExecuteNonQuery();
 
-                        MessageBox.Show("Tarefa adicionada com sucesso!");
+                        MessageBox.Show("Edição feita com sucesso!");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao adicionar tarefa: " + ex.Message);
+                    MessageBox.Show("Erro ao editar tarefa: " + ex.Message);
                 }
             }
         }
