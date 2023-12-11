@@ -2,14 +2,13 @@
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using TodoList.Data;
 using TodoList.Utils;
 
 namespace Register_System
 {
     public partial class RegisterForm : Form
     {
-        private const string ConnectionString = "Server=localhost;Database=master;Trusted_Connection=True;";
-
         public RegisterForm()
         {
             InitializeComponent();
@@ -25,6 +24,26 @@ namespace Register_System
         {
             string email = inputEmail.Text;
             string senha = inputSenha.Text;
+            string confirmacaoSenha = inputConfirmSenha.Text;
+
+            // Validações
+            if (string.IsNullOrWhiteSpace(email) || !Validation.IsValidEmail(email))
+            {
+                MessageBox.Show("Por favor, insira um e-mail válido.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(senha) || senha.Length < 6)
+            {
+                MessageBox.Show("A senha deve ter pelo menos 6 caracteres.");
+                return;
+            }
+
+            if (senha != confirmacaoSenha)
+            {
+                MessageBox.Show("A senha e a confirmação de senha não coincidem.");
+                return;
+            }
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
             {
@@ -34,13 +53,13 @@ namespace Register_System
 
             string novoUuid = UuidGenerator.GenerateUuid();
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
             {
                 try
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO Usuarios (ID, Email, Senha) VALUES (@ID, @Email, @Senha)";
+                    string query = QueryHelper.InsertUsuarios;
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@ID", novoUuid);
@@ -58,7 +77,6 @@ namespace Register_System
                 }
             }
         }
-
 
         private void labelRedirect_Click(object sender, EventArgs e)
         {

@@ -122,7 +122,7 @@ namespace Register_System
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(300, 40);
             this.btnRegister.TabIndex = 3;
-            this.btnRegister.Text = "Entrar";
+            this.btnRegister.Text = "Registrar";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 

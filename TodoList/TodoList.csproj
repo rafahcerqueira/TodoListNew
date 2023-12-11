@@ -46,17 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\QueryHelper.cs" />
+    <Compile Include="Forms\AdicionarTarefaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdicionarTarefaForm.Designer.cs">
+      <DependentUpon>AdicionarTarefaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
@@ -64,16 +65,22 @@
     <Compile Include="Forms\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ToDoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToDoListForm.Designer.cs">
+      <DependentUpon>ToDoListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\TaskModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\DatabaseHelper.cs" />
     <Compile Include="Utils\TaskManager.cs" />
     <Compile Include="Utils\UuidGenerator.cs" />
+    <Compile Include="Utils\Validation.cs" />
+    <Content Include="Data\queries.sql" />
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
@@ -89,7 +96,7 @@
     </Compile>
     <None Include="bin\Debug\tasks\22.11.2023.csv" />
     <None Include="bin\Debug\TodoList.exe.config" />
-    <Content Include="Data\queries.sql" />
+    <Content Include="Data\createDB.sql" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

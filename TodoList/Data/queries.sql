@@ -1,18 +1,16 @@
--- Scripts utilizados para criação de tabelas no banco de dados
+ï»¿SELECT * FROM Usuarios 
 
-CREATE TABLE Usuarios
-(
-    ID VARCHAR(36) PRIMARY KEY,
-    Email NVARCHAR(50) NOT NULL,
-    Senha NVARCHAR(50) NOT NULL
-);
+--SELECT * FROM Usuarios WHERE Email = 'rafa@gmail.com'
 
-CREATE TABLE Todo
-(
-    ID VARCHAR(36) PRIMARY KEY,
-    Description NVARCHAR(50) NOT NULL,
-    Done BIT NOT NULL,
-    UserID VARCHAR(36) NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES Usuarios(ID)
-);
+--ALTER TABLE Todo
+--ADD Data DATETIME;
 
+SELECT * FROM Todo
+
+-- Excluir tarefas do usuÃ¡rio
+DELETE FROM Todo
+WHERE UserID = '';
+
+-- Excluir o usuÃ¡rio
+DELETE FROM Usuarios
+WHERE ID = '';

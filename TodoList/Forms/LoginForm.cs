@@ -2,14 +2,14 @@
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using TodoList.Data;
+using TodoList.Utils;
 using ToDoList;
 
 namespace Login_System
 {
     public partial class LoginForm : Form
     {
-        private const string ConnectionString = "Server=localhost;Database=master;Trusted_Connection=True;";
-
         public LoginForm()
         {
             InitializeComponent();
@@ -32,14 +32,14 @@ namespace Login_System
                 return;
             }
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
             {
                 try
                 {
                     connection.Open();
+                    string selectUserByEmailAndPassword = QueryHelper.SelectUserCountByEmailAndPassword;
 
-                    string query = "SELECT COUNT(*) FROM Usuarios WHERE Email = @Email AND Senha = @Senha";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand(selectUserByEmailAndPassword, connection))
                     {
                         command.Parameters.AddWithValue("@Email", email);
                         command.Parameters.AddWithValue("@Senha", senha);
@@ -49,8 +49,25 @@ namespace Login_System
                         if (count > 0)
                         {
                             MessageBox.Show("Login bem-sucedido!");
-                            new Form1().Show();
-                            this.Hide();
+
+                            // Consulta para obter o ID do usuário
+                            string queryUserId = QueryHelper.SelectUserIdByEmail;
+                            using (SqlCommand commandUserId = new SqlCommand(queryUserId, connection))
+                            {
+                                commandUserId.Parameters.Add(new SqlParameter("@Email", email));
+
+                                object userIdResult = commandUserId.ExecuteScalar();
+
+                                if (userIdResult != null)
+                                {
+                                    // Armazenar o userID para enviar ao ToDoListForm
+                                    string userId = userIdResult.ToString();
+
+                                    ToDoListForm toDoListForm = new ToDoListForm(userId);
+                                    toDoListForm.Show();
+                                    this.Hide();
+                                }
+                            }
                         }
                         else
                         {
