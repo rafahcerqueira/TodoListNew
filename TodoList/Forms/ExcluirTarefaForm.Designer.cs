@@ -28,7 +28,7 @@ namespace ToDoList.Forms
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("MS UI Gothic", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Font = new System.Drawing.Font("Nirmala UI", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.ForeColor = System.Drawing.Color.MediumPurple;
             this.labelTitulo.Location = new System.Drawing.Point(86, 21);
             this.labelTitulo.Name = "labelTitulo";
@@ -44,7 +44,7 @@ namespace ToDoList.Forms
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("MS UI Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.MediumPurple;
             this.btnCancelar.Location = new System.Drawing.Point(23, 94);
             this.btnCancelar.Name = "btnCancelar";
@@ -60,7 +60,7 @@ namespace ToDoList.Forms
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("MS UI Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
             this.btnExcluir.Location = new System.Drawing.Point(250, 94);
             this.btnExcluir.Name = "btnExcluir";

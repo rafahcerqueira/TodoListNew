@@ -48,8 +48,6 @@ namespace Login_System
 
                         if (count > 0)
                         {
-                            MessageBox.Show("Login bem-sucedido!");
-
                             // Consulta para obter o ID do usuário
                             string queryUserId = QueryHelper.SelectUserIdByEmail;
                             using (SqlCommand commandUserId = new SqlCommand(queryUserId, connection))

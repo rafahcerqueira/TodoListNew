@@ -1,7 +1,4 @@
-﻿using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-
-namespace Register_System
+﻿namespace Register_System
 {
     partial class RegisterForm
     {
@@ -35,7 +32,7 @@ namespace Register_System
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("MS UI Gothic", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Nirmala UI", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.MediumPurple;
             this.title.Location = new System.Drawing.Point(171, 42);
             this.title.Name = "title";
@@ -56,8 +53,8 @@ namespace Register_System
             // inputEmail
             // 
             this.inputEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.inputEmail.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputEmail.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputEmail.ForeColor = System.Drawing.Color.White;
             this.inputEmail.Location = new System.Drawing.Point(93, 137);
             this.inputEmail.Multiline = true;
@@ -78,8 +75,8 @@ namespace Register_System
             // inputSenha
             // 
             this.inputSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.inputSenha.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputSenha.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputSenha.ForeColor = System.Drawing.Color.White;
             this.inputSenha.Location = new System.Drawing.Point(93, 222);
             this.inputSenha.Multiline = true;
@@ -102,7 +99,7 @@ namespace Register_System
             // 
             this.inputConfirmSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputConfirmSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputConfirmSenha.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputConfirmSenha.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputConfirmSenha.ForeColor = System.Drawing.Color.White;
             this.inputConfirmSenha.Location = new System.Drawing.Point(93, 307);
             this.inputConfirmSenha.Multiline = true;
@@ -164,7 +161,7 @@ namespace Register_System
             this.Controls.Add(this.inputEmail);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.title);
-            this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);

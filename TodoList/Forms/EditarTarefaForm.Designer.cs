@@ -32,7 +32,7 @@ namespace ToDoList.Forms
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("MS UI Gothic", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Font = new System.Drawing.Font("Nirmala UI", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.ForeColor = System.Drawing.Color.MediumPurple;
             this.labelTitulo.Location = new System.Drawing.Point(94, 21);
             this.labelTitulo.Name = "labelTitulo";
@@ -43,7 +43,7 @@ namespace ToDoList.Forms
             // labelDescricao
             // 
             this.labelDescricao.AutoSize = true;
-            this.labelDescricao.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescricao.Font = new System.Drawing.Font("Nirmala UI", 9.75F, FontStyle.Bold);
             this.labelDescricao.ForeColor = System.Drawing.Color.White;
             this.labelDescricao.Location = new System.Drawing.Point(20, 80);
             this.labelDescricao.Name = "labelDescricao";
@@ -54,7 +54,7 @@ namespace ToDoList.Forms
             // labelData
             // 
             this.labelData.AutoSize = true;
-            this.labelData.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData.Font = new System.Drawing.Font("Nirmala UI", 9.75F, FontStyle.Bold);
             this.labelData.ForeColor = System.Drawing.Color.White;
             this.labelData.Location = new System.Drawing.Point(20, 120);
             this.labelData.Name = "labelData";
@@ -66,7 +66,7 @@ namespace ToDoList.Forms
             // 
             this.txtDescricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescricao.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtDescricao.ForeColor = System.Drawing.Color.White;
             this.txtDescricao.Location = new System.Drawing.Point(120, 80);
             this.txtDescricao.Name = "txtDescricao";
@@ -88,7 +88,7 @@ namespace ToDoList.Forms
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("MS UI Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.MediumPurple;
             this.btnCancelar.Location = new System.Drawing.Point(23, 164);
             this.btnCancelar.Name = "btnCancelar";
@@ -104,7 +104,7 @@ namespace ToDoList.Forms
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("MS UI Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(250, 164);
             this.btnEditar.Name = "btnEditar";

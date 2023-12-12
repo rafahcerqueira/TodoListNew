@@ -23,3 +23,7 @@ C:\Users\dan99\OneDrive\Área de Trabalho\to-do-list-csharp\TodoList\obj\Debug\T
 C:\Users\dan99\OneDrive\Área de Trabalho\to-do-list-csharp\TodoList\obj\Debug\ToDoList.Forms.ExcluirTarefaForm.resources
 C:\Users\dan99\OneDrive\Área de Trabalho\to-do-list-csharp\TodoList\obj\Debug\ToDoList.Forms.AdicionarTarefaForm.resources
 C:\Users\dan99\OneDrive\Área de Trabalho\to-do-list-csharp\TodoList\obj\Debug\ToDoList.Forms.EditarTarefaForm.resources
+C:\Users\rafah\OneDrive\Área de Trabalho\to-do-list-csharp\TodoList\obj\Debug\ToDoList.Forms.AdicionarTarefaForm.resources
+C:\Users\rafah\OneDrive\Área de Trabalho\to-do-list-csharp\TodoList\obj\Debug\ToDoList.Forms.EditarTarefaForm.resources
+C:\Users\rafah\OneDrive\Área de Trabalho\to-do-list-csharp\TodoList\obj\Debug\ToDoList.Forms.ExcluirTarefaForm.resources
+C:\Users\rafah\OneDrive\Área de Trabalho\to-do-list-csharp\TodoList\obj\Debug\ToDoList.ToDoListForm.resources

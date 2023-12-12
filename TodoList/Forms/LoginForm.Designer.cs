@@ -33,11 +33,11 @@ namespace Login_System
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("MS UI Gothic", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Nirmala UI", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.MediumPurple;
             this.title.Location = new System.Drawing.Point(188, 42);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(112, 33);
+            this.title.Size = new System.Drawing.Size(120, 45);
             this.title.TabIndex = 6;
             this.title.Text = "LOGIN";
             // 
@@ -55,10 +55,11 @@ namespace Login_System
             // 
             this.inputEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputEmail.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputEmail.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputEmail.ForeColor = System.Drawing.Color.White;
             this.inputEmail.Location = new System.Drawing.Point(95, 172);
-            this.inputEmail.Multiline = true;
+            this.inputEmail.MaximumSize = new System.Drawing.Size(300, 40);
+            this.inputEmail.MinimumSize = new System.Drawing.Size(300, 40);
             this.inputEmail.Name = "inputEmail";
             this.inputEmail.Size = new System.Drawing.Size(300, 40);
             this.inputEmail.TabIndex = 0;
@@ -75,16 +76,20 @@ namespace Login_System
             // 
             // inputSenha
             // 
+            this.inputSenha.AcceptsTab = true;
             this.inputSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputSenha.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputSenha.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputSenha.ForeColor = System.Drawing.Color.White;
             this.inputSenha.Location = new System.Drawing.Point(95, 257);
-            this.inputSenha.Multiline = true;
+            this.inputSenha.Margin = new System.Windows.Forms.Padding(10);
+            this.inputSenha.MaximumSize = new System.Drawing.Size(300, 40);
+            this.inputSenha.MinimumSize = new System.Drawing.Size(300, 40);
             this.inputSenha.Name = "inputSenha";
             this.inputSenha.PasswordChar = '*';
             this.inputSenha.Size = new System.Drawing.Size(300, 40);
             this.inputSenha.TabIndex = 1;
+            this.inputSenha.WordWrap = false;
             // 
             // btnLogin
             // 
@@ -125,7 +130,6 @@ namespace Login_System
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(500, 500);
             this.Controls.Add(this.inputRedirect);

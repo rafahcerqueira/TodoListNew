@@ -18,6 +18,7 @@ namespace ToDoList
             this.userID = userID;
 
             ToDoListForm_Load(this, EventArgs.Empty);
+            Application.VisualStyleState = System.Windows.Forms.VisualStyles.VisualStyleState.NoneEnabled;
         }
 
         private void CarregarTarefas(string userID)
@@ -37,26 +38,29 @@ namespace ToDoList
                         {
                             while (reader.Read())
                             {
-                                string id = reader["Id"].ToString();
-                                string description = reader["Description"].ToString();
-                                bool done = (bool)reader["Done"];
+                                TaskModel task = new TaskModel
+                                {
+                                    Id = reader["Id"].ToString(),
+                                    Description = reader["Description"].ToString(),
+                                    Done = Convert.ToBoolean(reader["Done"])
+                                };
 
                                 // Criar uma nova linha para a tarefa
                                 DataGridViewRow row = new DataGridViewRow();
 
                                 // Adicionar ID à célula
                                 DataGridViewTextBoxCell idCell = new DataGridViewTextBoxCell();
-                                idCell.Value = id;
+                                idCell.Value = task.Id;
                                 row.Cells.Add(idCell);
 
                                 // Adicionar checkbox à célula
                                 DataGridViewCheckBoxCell checkBoxCell = new DataGridViewCheckBoxCell();
-                                checkBoxCell.Value = done;
+                                checkBoxCell.Value = task.Done;
                                 row.Cells.Add(checkBoxCell);
 
                                 // Adicionar descrição à célula
                                 DataGridViewTextBoxCell descriptionCell = new DataGridViewTextBoxCell();
-                                descriptionCell.Value = description;
+                                descriptionCell.Value = task.Description;
                                 row.Cells.Add(descriptionCell);
 
                                 // Adicionar botão de editar à célula

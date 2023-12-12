@@ -32,18 +32,19 @@ namespace ToDoList.Forms
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("MS UI Gothic", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Font = new System.Drawing.Font("Nirmala UI", 24.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.ForeColor = System.Drawing.Color.MediumPurple;
             this.labelTitulo.Location = new System.Drawing.Point(69, 20);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(259, 33);
             this.labelTitulo.TabIndex = 1;
+            this.labelTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.labelTitulo.Text = "Adicionar Tarefa";
             // 
             // labelDescricao
             // 
             this.labelDescricao.AutoSize = true;
-            this.labelDescricao.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescricao.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDescricao.ForeColor = System.Drawing.Color.White;
             this.labelDescricao.Location = new System.Drawing.Point(20, 80);
             this.labelDescricao.Name = "labelDescricao";
@@ -54,7 +55,7 @@ namespace ToDoList.Forms
             // labelData
             // 
             this.labelData.AutoSize = true;
-            this.labelData.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelData.ForeColor = System.Drawing.Color.White;
             this.labelData.Location = new System.Drawing.Point(20, 120);
             this.labelData.Name = "labelData";
@@ -66,7 +67,7 @@ namespace ToDoList.Forms
             // 
             this.txtDescricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescricao.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao.ForeColor = System.Drawing.Color.White;
             this.txtDescricao.Location = new System.Drawing.Point(120, 80);
             this.txtDescricao.Name = "txtDescricao";
@@ -104,7 +105,7 @@ namespace ToDoList.Forms
             this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Font = new System.Drawing.Font("MS UI Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.ForeColor = System.Drawing.Color.White;
             this.btnAdicionar.Location = new System.Drawing.Point(250, 164);
             this.btnAdicionar.Name = "btnAdicionar";
