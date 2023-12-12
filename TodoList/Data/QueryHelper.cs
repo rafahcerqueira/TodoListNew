@@ -14,5 +14,6 @@
         public static string DeleteTasksByUserId => "DELETE FROM Todo WHERE UserID = @UserID";
         public static string DeleteTaskById => "DELETE FROM Todo WHERE ID = @Id";
         public static string DeleteUserById => "DELETE FROM Usuarios WHERE ID = @UserID";
+        public static string CompleteTask => "UPDATE Todo SET Done = @Done WHERE ID = @Id";
     }
 }

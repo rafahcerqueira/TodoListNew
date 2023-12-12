@@ -70,6 +70,9 @@ namespace Register_System
                     }
 
                     MessageBox.Show("Registro bem-sucedido!");
+                    new LoginForm().Show();
+                    this.Hide();
+
                 }
                 catch (Exception ex)
                 {

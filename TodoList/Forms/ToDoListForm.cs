@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TodoList.Data;
 using TodoList.Utils;
@@ -98,6 +99,8 @@ namespace ToDoList
                     EditarTarefa(e.RowIndex);
                 else if (column.Name == "ColumnExcluir")
                     ExcluirTarefa(e.RowIndex);
+                else if (column.Name == "ColumnConcluida")
+                    CompletarTarefa(e.RowIndex);
             }
         }
 
@@ -106,7 +109,10 @@ namespace ToDoList
             using (AdicionarTarefaForm adicionarTarefaForm = new AdicionarTarefaForm(userID))
             {
                 if (adicionarTarefaForm.ShowDialog() == DialogResult.OK)
+                {
+                    dataGridView_TodoTasks.Rows.Clear();
                     CarregarTarefas(userID);
+                }
             }
         }
 
@@ -152,6 +158,67 @@ namespace ToDoList
                             CarregarTarefas(userID);
                         }
                     }
+                }
+            }
+        }
+
+        private void CompletarTarefa(int rowIndex)
+        {
+            if (rowIndex >= 0 && rowIndex < dataGridView_TodoTasks.Rows.Count)
+            {
+                DataGridViewRow row = dataGridView_TodoTasks.Rows[rowIndex];
+
+                // Verificar se a célula da coluna "ColumnId" está presente
+                if (row.Cells["ColumnId"] != null && row.Cells["ColumnId"].Value != null)
+                {
+                    string id = row.Cells["ColumnId"].Value.ToString();
+
+                    if (row.Cells["ColumnConcluida"] is DataGridViewCheckBoxCell checkBoxCell)
+                    {
+                        // Obter o valor booleano do CheckBox
+                        bool concluida = (bool)checkBoxCell.Value;
+                        int completed = 1;
+
+                        if(concluida)
+                        {
+                            completed = 0;
+                        }
+
+
+                        bool returnOk = CompletarTarefaDB(id, completed);
+
+                        if (returnOk)
+                        {
+                            dataGridView_TodoTasks.Rows.Clear();
+                            CarregarTarefas(userID);
+                        }
+                    }
+                }
+            }
+        }
+
+        private bool CompletarTarefaDB(string idTask, int done)
+        {
+            string queryCompletedTaks = QueryHelper.CompleteTask;
+
+            using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(queryCompletedTaks, connection))
+                    {
+                        command.Parameters.AddWithValue("@Done", done);
+                        command.Parameters.AddWithValue("@Id", idTask);
+                        command.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao alterar tarefa: " + ex.Message);
+                    return false;
                 }
             }
         }
