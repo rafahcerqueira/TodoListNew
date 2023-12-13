@@ -99,7 +99,7 @@
             // 
             this.inputConfirmSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.inputConfirmSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inputConfirmSenha.Font = new System.Drawing.Font("Nirmala UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputConfirmSenha.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputConfirmSenha.ForeColor = System.Drawing.Color.White;
             this.inputConfirmSenha.Location = new System.Drawing.Point(93, 307);
             this.inputConfirmSenha.Multiline = true;

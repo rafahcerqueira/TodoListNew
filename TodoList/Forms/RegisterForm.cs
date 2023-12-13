@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using TodoList.Data;
 using TodoList.Utils;
+using ToDoList;
 
 namespace Register_System
 {
@@ -58,6 +59,21 @@ namespace Register_System
                 try
                 {
                     connection.Open();
+
+                    // Consulta para obter o ID do usuário
+                    string queryUserId = QueryHelper.SelectUserIdByEmail;
+                    using (SqlCommand commandUserId = new SqlCommand(queryUserId, connection))
+                    {
+                        commandUserId.Parameters.Add(new SqlParameter("@Email", email));
+
+                        object userIdResult = commandUserId.ExecuteScalar();
+
+                        if (userIdResult != null)
+                        {
+                            MessageBox.Show("Email já cadastrado!");
+                            return;
+                        }
+                    }
 
                     string query = QueryHelper.InsertUsuarios;
                     using (SqlCommand command = new SqlCommand(query, connection))
